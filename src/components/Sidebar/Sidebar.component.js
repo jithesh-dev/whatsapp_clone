@@ -1,26 +1,44 @@
-import React from "react";
-import { Avatar, IconButton } from "@material-ui/core";
-import DonutLargeIcon from "@material-ui/icons/DonutLarge";
-import ChatIcon from "@material-ui/icons/Chat";
-import MoreVertIcon from "@material-ui/icons/MoreVert";
+import React from 'react';
+import { Avatar, IconButton } from '@material-ui/core';
+import DonutLargeIcon from '@material-ui/icons/DonutLarge';
+import ChatIcon from '@material-ui/icons/Chat';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
+import SearchOutlinedIcon from '@material-ui/icons/SearchOutlined';
+import SidebarChat from '../SidebarChat/SidebarChat.component';
 
-import "./Sidebar.style.css";
+import './Sidebar.style.css';
 
 function Sidebar() {
   return (
-    <div className="sidebar">
-      <div className="sidebar__header">
+    <div className='sidebar'>
+      <div className='sidebar__header'>
         <Avatar />
-        <div className="sidebar__headerRight">
+        <div className='sidebar__headerRight'>
           <IconButton>
             <DonutLargeIcon />
+          </IconButton>
+          <IconButton>
             <ChatIcon />
+          </IconButton>
+          <IconButton>
             <MoreVertIcon />
           </IconButton>
         </div>
       </div>
-      <div className="sidebar__search"></div>
-      <div className="sidebar__chats"></div>
+      <div className='sidebar__search'>
+        <div className='sidebar__searchContainer'>
+          <SearchOutlinedIcon />
+          <input placeholder='Search or start new chat' type='text' />
+        </div>
+      </div>
+      <div className='sidebar__chats'>
+        <SidebarChat addNewChat />
+        <SidebarChat />
+        <SidebarChat />
+        <SidebarChat />
+        <SidebarChat />
+        <SidebarChat />
+      </div>
     </div>
   );
 }
