@@ -57,4 +57,5 @@
   flex: 1;
   background-color: #fff;
   overflow: scroll;
+  overflow-x: hidden;
 }
